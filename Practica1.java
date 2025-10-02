@@ -5,21 +5,25 @@ import java.util.*;
 public class Practica1 {
 
     //EJERCICIO 1
-    public static Set<Integer> multiplos (Iterator<Integer> it) {
-        //TODO
-        Set<Integer> multiplos = new HashSet<>();
-        List<Integer> enteros = new ArrayList<>();
+
+    public static Set<Integer> multiplos(Iterator<Integer> it) {
+        List<Integer> numeros = new ArrayList<>();
         while (it.hasNext()) {
-            enteros.add(it.next());
+            int num = it.next();
+            if (num != 0) numeros.add(num);
         }
-        for (int i = 0; i<enteros.size(); i++){
-            for (int j = 0; j<enteros.size(); j++){
-                if (i!=j && enteros.get(j) !=0 && enteros.get(i)%enteros.get(j)==0){
-                    multiplos.add(j);
+        Set<Integer> resultado = new HashSet<>();
+        for (int i = 0; i < numeros.size(); i++) {
+            for (int j = 0; j < numeros.size(); j++) {
+                if (i != j) {
+                    if (numeros.get(j) != 0 &&  numeros.get(i) % numeros.get(j)== 0) {
+                        resultado.add( numeros.get(i));
+                        break;
+                    }
                 }
             }
         }
-        return multiplos;
+        return resultado;
     }
 
     //EJERCICIO2
