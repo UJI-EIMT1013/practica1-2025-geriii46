@@ -30,6 +30,7 @@ public class Practica1 {
     public static void separate (Set<Integer> cuadrados, Set<Integer> noCuadrados)  {
         //TODO
 
+        }
     }
 
     //EJERCICIO 3
