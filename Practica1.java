@@ -7,7 +7,19 @@ public class Practica1 {
     //EJERCICIO 1
     public static Set<Integer> multiplos (Iterator<Integer> it) {
         //TODO
-        return null;
+        Set<Integer> multiplos = new HashSet<>();
+        List<Integer> enteros = new ArrayList<>();
+        while (it.hasNext()) {
+            enteros.add(it.next());
+        }
+        for (int i = 0; i<enteros.size(); i++){
+            for (int j = 0; j<enteros.size(); j++){
+                if (i!=j && enteros.get(j) !=0 && enteros.get(i)%enteros.get(j)==0){
+                    multiplos.add(j);
+                }
+            }
+        }
+        return multiplos;
     }
 
     //EJERCICIO2

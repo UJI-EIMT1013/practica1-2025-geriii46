@@ -1,6 +1,6 @@
 package practica1;
 
-//import org.junit.Test;
+import org.junit.Test;
 
 import java.util.*;
 
