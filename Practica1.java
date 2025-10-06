@@ -5,11 +5,10 @@ import java.util.*;
 public class Practica1 {
 
     //EJERCICIO 1
-
     public static Set<Integer> multiplos(Iterator<Integer> it) {
         List<Integer> numeros = new ArrayList<>();
         while (it.hasNext()) {
-            int num = it.next();
+            Integer num = it.next();
             if (num != 0) numeros.add(num);
         }
         Set<Integer> resultado = new HashSet<>();
@@ -30,7 +29,6 @@ public class Practica1 {
     public static void separate (Set<Integer> cuadrados, Set<Integer> noCuadrados)  {
         //TODO
 
-        }
     }
 
     //EJERCICIO 3
@@ -44,7 +42,4 @@ public class Practica1 {
         //TODO
         return null;
     }
-
-
-
 }
