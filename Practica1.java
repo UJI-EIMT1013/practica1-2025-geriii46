@@ -67,7 +67,6 @@ public class Practica1 {
     public static<T> Collection<Set<T>> divideInSets (Iterator<T> it) {
         //TODO
         List<Set<T>> sets = new ArrayList<>();
-
         while (it.hasNext()){
             boolean encontrado = false;
             T elem = it.next();
