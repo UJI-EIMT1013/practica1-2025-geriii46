@@ -88,18 +88,29 @@ public class Practica1 {
 
     //EJERCICIO 4
     public static <T> Collection<Set<T>> coverageSet2(Set<T> u, ArrayList<Set<T>> col) {
+        int minSize=0;
+        Collection<Set<T>> resultado = new HashSet<>();
+        boolean encontrado = false;
+        if (u.isEmpty()) return new HashSet<>();
         for (int i = 0; i < col.size(); i++) {
             for (int j = i + 1; j < col.size(); j++) {
-                Set<T> union = new HashSet<>(col.get(i));
-                union.addAll(col.get(j));
+                Set<T> s1 = col.get(i);
+                Set<T> s2 = col.get(j);
+                Set<T> union = new HashSet<>(s1);
+                union.addAll(s2);
                 if (union.equals(u)) {
-                    List<Set<T>> result = new ArrayList<>();
-                    result.add(col.get(i));
-                    result.add(col.get(j));
-                    return result;
+                    int size = s1.size() + s2.size();
+                    if (!encontrado || size < minSize) {
+                        minSize = size;
+                        resultado = new HashSet<>();
+                        resultado.add(s1);
+                        resultado.add(s2);
+                        encontrado = true;
+                    }
                 }
             }
         }
-        return new ArrayList<>();
+        return resultado;
     }
+
 }
